@@ -82,11 +82,10 @@
           <img
             v-for="(item, index) in user_card"
             @click="look_card(index)"
-            class="card"
+            class="card-self"
             :src="
               item ? YesCard : NoCard
             "
-            :key="item"
           />
         </div>
       </div>
@@ -97,7 +96,7 @@
 import YesCard from "../assets/yes-card.png"
 import NoCard from "../assets/no-card.png"
 import CardComponent from "../Components/CardComponent.vue";
-import { ref, reactive } from "vue";
+import { ref } from "vue";
 import axios from "axios";
 import Cookies from "js-cookie";
 
@@ -192,9 +191,6 @@ function look_card(index) {
   } else alert("此卡片未收集喵~");
 }
 
-function url(s){
-  return new URL(s);
-}
 </script>
 <style scoped>
 .to-gacha {
@@ -256,7 +252,7 @@ function url(s){
   bottom: 10vw;
   left: 0;
 }
-.card {
+.card-self {
   width: 30vw;
   margin-top: 5vw;
 }

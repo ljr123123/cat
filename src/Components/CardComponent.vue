@@ -40,13 +40,15 @@ const is_1_1 = ref(false);
   position: absolute;
   top:0;
   left:0;
-  z-index:1000; 
+  z-index:10; 
   height:100vh;
   width:100vw;
+  background:#00000050;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin:0;
 }
 .show-01{
     position: absolute;
