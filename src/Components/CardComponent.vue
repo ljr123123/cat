@@ -31,7 +31,6 @@ const props = defineProps({
 const emits = defineEmits(["cancel"]);
 const is_01 = ref(true);
 const is_1 = ref(false);
-const is_1_1 = ref(false);
 
 </script>
 
@@ -73,7 +72,7 @@ const is_1_1 = ref(false);
     transition: all 1s;
 }
 .disappear-01{
-    position: absolute;
+    position: fixed;
     top:0;
     left:-100vw;
     display: flex;
@@ -84,7 +83,7 @@ const is_1_1 = ref(false);
     height:100vh;
 }
 .disappear-1{
-    position: absolute;
+    position: fixed;
     top:0;
     left:100vw;
     display: flex;
@@ -95,27 +94,23 @@ const is_1_1 = ref(false);
     height:100vh;
 }
 .image-01{
-    width:80vw;
-    position: absolute;
-    left:10vw;
-    top:10vh;
+    height:90vh;
+    
 }
 .image-1{
-    width:80vw;
-    position: absolute;
-    left:10vw;
-    top:5vh;
+    height:90vh;
+    
 }
 .cancel-1{
     width:6vw;
     position: absolute;
-    top:180vw;
+    bottom:9%;
     z-index: 100;
 }
 .cancel-2{
-    width:6vw;
+    width:5vw;
     position: absolute;
-    top:183vw;
+    bottom:8%;
     z-index: 100;
 }
 .to-right{
@@ -139,15 +134,19 @@ const is_1_1 = ref(false);
 }
 .share-image-box{
     position: absolute;
-    top:20vw;
+    height:100vh;
+    width:100vw;
+    top:0vw;
     left:0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 .click-empty{
-    position: absolute;
-    width:25vw;
-    height:13vw;
-    left:37.5vw;
-    top:-15vw;
+    padding:2%;
+    min-height:40px;
+    margin-top:5%;
     font-size: 20px;
     color:#FFFFFF;
     box-shadow: 0 0 1vh rgba(0, 0, 0, 0.3);

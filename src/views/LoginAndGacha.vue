@@ -182,6 +182,7 @@ async function check_card() {
   res.data.result.forEach((Element) => {
     user_card.value[Element - 1] = true;
   });
+  console.log(res.data.result);
 }
 
 function look_card(index) {
@@ -193,11 +194,17 @@ function look_card(index) {
 
 </script>
 <style scoped>
+.check-box{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height:100vh;
+  width:100vw;
+}
 .to-gacha {
-  height: 10vw;
-  position: absolute;
-  left: 6.5vw;
-  top: 20vw;
+  height: 5vh;
+  margin:5vh;
+  z-index:100;
 }
 .open-1 {
   height: 100vh;
@@ -254,7 +261,7 @@ function look_card(index) {
 }
 .card-self {
   width: 30vw;
-  margin-top: 5vw;
+  margin-top: 2.5vw;
 }
 @keyframes gachaBundle {
   0% {
@@ -434,7 +441,7 @@ input::placeholder {
   border: 4px #745528 solid;
   width: 70%;
   margin: 2vw;
-  border-radius: 1vh;
+  border-radius: 2vw;;
   padding: 1vh;
 }
 
@@ -499,7 +506,6 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   top: 33%;
   width: 90%;
   height: 40%;
@@ -507,5 +513,30 @@ input::placeholder {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: 50% 0%;
+}
+@media screen and (max-height:500px) {
+  .login-box{
+    top:20%;
+    height:50%;
+  }
+  .login-image{
+    opacity: 0;
+    z-index:-1;
+  }
+  .login-title{
+    opacity: 0;
+    z-index:-1;
+  }
+  .first-input{
+    margin-top:15vw;
+  }
+  .login-input{
+    height:8%;
+    border-radius: 2vw;
+    width:33vh;
+  }
+  .log-in{
+    font-size:15px;
+  }
 }
 </style>
