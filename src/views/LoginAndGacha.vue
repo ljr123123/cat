@@ -35,6 +35,9 @@
         <button class="log-in" @click="login()">登入</button>
       </div>
     </Transition>
+    <Transition name="fade" appear v-show="!is_login && !is_welcome">
+      <p class="text">微北洋账号登陆</p>
+    </Transition>
 
     <!--以下为抽签部分-->
     <Transition name="fade" appear v-show="is_login && is_gacha">
@@ -96,7 +99,7 @@
 import YesCard from "../assets/yes-card.png"
 import NoCard from "../assets/no-card.png"
 import CardComponent from "../Components/CardComponent.vue";
-import { ref } from "vue";
+import { Transition, ref } from "vue";
 import axios from "axios";
 import Cookies from "js-cookie";
 
@@ -194,6 +197,14 @@ function look_card(index) {
 
 </script>
 <style scoped>
+.text{
+  position: absolute;
+  left:5%;
+  width:90%;
+  top:70%;
+  text-align: center;
+  color:#b2a39c;
+}
 .check-box{
   display: flex;
   flex-direction: column;
